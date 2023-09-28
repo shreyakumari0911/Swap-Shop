@@ -545,7 +545,7 @@ button.white{
   background-image: url(https://i.postimg.cc/R0Bs4qqt/b14.png);
     background-repeat: no-repeat;
     background-position: 20% 30%;
-  background-color: #041e42;
+  background-color: #f1f3f7;
 }
 #prodetails .single-pr
 #newsletter h4{
@@ -580,8 +580,8 @@ button.white{
   background-color: #088178;
   color: #fff;
   white-space: nowrap;
-  /* border-left-right-radius: 0;
-  border-left-right-radius: 0;  */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;  
 }
 
 #newsletter .form{
@@ -594,7 +594,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  position: relative;
+  
 }
 
 
@@ -603,7 +603,7 @@ footer .col{
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
-  margin-left: 50px
+
 
 }
 
@@ -616,7 +616,7 @@ footer .sec{
 }
 
 footer .logo{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 footer h4{
