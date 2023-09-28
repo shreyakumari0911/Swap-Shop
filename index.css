@@ -346,8 +346,33 @@ flex-wrap: wrap
   padding:40px 0 2px 0;
 }
 #prodetails .single-pro-detail h2{
-  padding:40px 0 2px 0;
+  font-size: 26px;
 }
+#prodetails .single-pro-detail select{
+  display: block;
+  padding:5px 10px;
+  padding-bottom:10px;
+}
+#prodetails .single-pro-detail input{
+  width:50px;
+  height:47px;
+  font-size:16px;
+  margin-right:10px;
+}
+#prodetails .single-pro-detail input:focus{
+  outline:none;
+
+}
+#prodetails .single-pro-detail span{
+  line-height: 25px;
+}
+
+#prodetails .single-pro-detail button{
+  background-color: #088178;
+  color: #fff;
+
+}
+
 #prodetails{
   display: flex;
   margin-top: 20px;
