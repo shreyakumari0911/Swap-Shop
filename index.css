@@ -333,7 +333,29 @@ flex-wrap: wrap
 #prodetails .single-pro-image{
   width: 40%;
   margin-right:50px;
-  
+}
+.small-img-group{
+  display: flex;
+  justify-content: space-between;
+}
+#prodetails .single-pro-detail{
+  width: 50%;
+  padding-top:30px;
+}
+#prodetails .single-pro-detail h4{
+  padding:40px 0 2px 0;
+}
+#prodetails .single-pro-detail h2{
+  padding:40px 0 2px 0;
+}
+#prodetails{
+  display: flex;
+  margin-top: 20px;
+
+}
+.small-img-col{
+  flex-basis: 24%;
+  cursor: pointer;
 }
 button.normal{
   color: #000;
