@@ -477,7 +477,7 @@ button.white{
   justify-content: center;
   align-items: flex-start;
   text-align: center;
-  background-image: url(Images/indian\ grocery.jpg);
+  background-image: url(Images/grocery.jpg);
   min-width: 30%;
   height: 30vh;
   background-position: center;
@@ -487,9 +487,9 @@ button.white{
 }
 
 #banner3 h2{
-  color: #fff;
+  color: #979e11;
   font-weight: 900;
-  font-size: 22px;
+  font-size: 25px;
 }
 #page-header{
   height:40vh;
@@ -515,11 +515,11 @@ button.white{
 }
 
 #banner3 .banner-img2{
-  background-image: url(Images/STATIONERY.jpeg)
+  background-image: url(Images/stationery1.jpg)
 }
 
 #banner3 .banner-img3{
-   background-image: url(rptgtpxd-1396254731.avif)
+   background-image: url(Images/books1.jpg)
 }
 #pagination{
   text-align: center;
