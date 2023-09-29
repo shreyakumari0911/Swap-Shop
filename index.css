@@ -35,7 +35,7 @@ h6{
 
 p{
   font-size: 16px;
-  color: #465b52;
+  color: #17b26f;
   margin: 15px 0 20px 0
 }
 
@@ -132,7 +132,7 @@ display: none;
 }
 
 #hero{
-  background-image: url("https://i.postimg.cc/cCwBHzDV/hero4.png");
+  background-image: url("Images/bghome.jpg");
   height: 90vh;
   width: 100%;
   background-size: cover;
@@ -156,6 +156,7 @@ display: none;
 
 #hero h4{
   padding-bottom: 15px;
+  
  
 }
 
