@@ -132,7 +132,7 @@ display: none;
 }
 
 #hero{
-  background-image: url("Images/bghome.jpg");
+  background-image: url("Images/bghome2.avif");
   height: 90vh;
   width: 100%;
   background-size: cover;
@@ -147,7 +147,7 @@ display: none;
 }
 
 #hero h1{
-  color: #088178;
+  color: #011413;
   
 }
 /* #hero h2{
@@ -604,6 +604,7 @@ footer .col{
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
+  
 
 
 }
@@ -650,13 +651,14 @@ footer .follow i{
 }
 
 footer .follow i:hover, footer a:hover {
-  color: #088178;
+  color: #0d1111;
  
 }
 
 footer .install .row img{
-  border: 1px solid #088178; 
+  border: 1px solid #111313; 
   border-radius: 6px;
+  
     
 }
 
