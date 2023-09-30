@@ -11,28 +11,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-    <div class="log-head" >
+    <form>
+    <div class="log-head bgo" >
         <div class="form-info">
             <p class="phead">Login</p>
             <form class="lform">
                 <div class="lform-input">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="username">Name</label>
+                    <input type="text" id="username" name="name" placeholder="Enter Name">
+                    <i class="fa-regular fa-keyboard"></i>
+                   
                 </div>
                 <div class="lform-input">
-                    <label for="username">Name</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                    <i class="fa-regular fa-user"></i>
+                    
                 </div>
                 <div class="lform-input">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="" required>
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                    <i class="fa-solid fa-lock"></i>
                 </div>
-                <button class="lform-button" type="submit">Login</button>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+               <button class="lform-button" type="submit">Login </button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me </label>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div></label>
             </form>
-            <p class="signup-link">Don't have an account?<a href="/signup.html">Sign up</a></p>
+            <p class="signup-link">Don't have an account?<a href="/signup.html"> Sign up</a></p>
         </div>
-    </div>
+    </div></form>
 </body>
 </html>
 
@@ -48,12 +56,15 @@
     *{
     padding: 0%;
     margin: 0%;
-    font-style: spartan,san-serif;
-}
+    }
 body{
-    background-color: #27ADA4;
+   
     display: flex;
     justify-content: center;
+    background-image:url("Images/lightblue.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-info{
@@ -61,78 +72,87 @@ body{
 }
 
 .phead{
-    font-size: 40px;
-    font-weight: bolder;
-    color: #27ADA4;
+    font-size: 30px;
+    font-weight:1000;
+    color: #322082;
     text-align: center;
     margin-top: 2rem;
+    font-style:normal;
 }
 
 .log-head{
     width: 350px;
     height: 500px;
-    background-color: aliceblue;
+    background-color:rgba(183, 228, 240, 0.2);
     display: flex;
     justify-content: center;
-    border: 7px solid black;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 40px;
-    margin-top: 11%;
-    box-shadow: 5px 5px 2.5px black ;
-    animation-name: borderanimation;
-    animation-iteration-count: infinite;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-}
-
-@keyframes borderanimation {
-    0%{
-        border-color: rgba(236, 154, 4, 0.977);
-    }
-    100%{
-        border-color: rgba(183, 183, 12, 0.649);
-    }
+    border: 7px solid rgb(145, 185, 240);
+    border-radius: 5px;
+    padding: 16px;
+    margin-top:22%;
+    margin-left: 8%;
+    border: 5px solid rgb(175, 205, 246);
 }
 
 .lform-input input:hover{
-    border: 3px solid black;
-}
+    border: 1px solid black;
+    
+} 
 
 .lform-input{
     margin-top: 2rem;
+    position: relative;
+   
 }
 
 .lform-input label{
     display: block;
-    font-weight: 700;
+}
+i{
+    position: absolute;
+    right: 20px;
+    top: 65%;
+    transform: translateY(-50%);
+    font-size: 20px;
 }
 
-.lform-input input{
+/*.lform-input input{
     width: 100%;
     height: 2rem;
     border: 1px solid black;
-    border-radius: 5px;
-}
+    border-radius: 20%;
+    border-radius: 10px;
+    padding-left: 10px;}*/
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+ 
+}  
+
 .g-signin2{
     margin-top: 1rem;
     margin-left: 5rem;
 }
 
 .lform-button{
-    display: block;
-    margin-top: 1rem;
-    height: 2.5rem;
-    color: aliceblue;
-    width: 5rem;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    background-color:#DBA39A;
-    margin-left: 35%;
+  background-color: #322082;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
 }
 
+
 .lform-button:hover{
-    border: 2px solid black;
-    background-color: #4B5D67;
+  opacity: 0.8;
+
 }
 
 .signup-link{
@@ -144,5 +164,6 @@ body{
 
 .signup-link a{
     text-decoration: none;
+    color:  rgb(1, 98, 111);
 }
 </style>
