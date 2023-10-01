@@ -133,7 +133,7 @@ display: none;
 
 #hero{
   background-image: url("Images/bghome2.avif");
-  height: 90vh;
+  height: 70vh;
   width: 100%;
   background-size: cover;
   background-position: top 25% right 0;
@@ -865,4 +865,8 @@ display: flex;
   footer .copyright{
     text-align: start;
   }
+}
+#page-header h2{
+  text-align: center;
+  padding-top: 100px;
 }
