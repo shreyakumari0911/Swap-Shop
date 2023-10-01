@@ -44,126 +44,137 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
 <!-- css -->
 <style>
-    *{
-    padding: 0%;
-    margin: 0%;
+    * {
+        padding: 0%;
+        margin: 0%;
     }
-body{
-   
-    display: flex;
-    justify-content: center;
-    background-image:url("Images/lightblue.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.form-info{
-    width: 80%;
-}
+    body {
+        display: flex;
+        justify-content: center;
+        background-image: url("Images/lightblue.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-.phead{
-    font-size: 30px;
-    font-weight:1000;
-    color: #322082;
-    text-align: center;
-    margin-top: 2rem;
-    font-style:normal;
-}
+    .form-info {
+        width: 80%;
+    }
 
-.log-head{
-    width: 350px;
-    height: 500px;
-    background-color:rgba(183, 228, 240, 0.2);
-    display: flex;
-    justify-content: center;
-    border: 7px solid rgb(145, 185, 240);
-    border-radius: 5px;
-    padding: 16px;
-    margin-top:22%;
-    margin-left: 8%;
-    border: 5px solid rgb(175, 205, 246);
-}
+    .phead {
+        font-size: 30px;
+        font-weight: 1000;
+        color: #322082;
+        text-align: center;
+        margin-top: 2rem;
+        font-style: normal;
+    }
 
-.lform-input input:hover{
-    border: 1px solid black;
+    .log-head {
+        width: 350px;
+        height: 500px;
+        background-color: rgba(183, 228, 240, 0.2);
+        display: flex;
+        justify-content: center;
+        border: 7px solid rgb(145, 185, 240);
+        border-radius: 5px;
+        padding: 16px;
+        margin-top: 22%;
+        margin-left: 8%;
+        border: 5px solid rgb(175, 205, 246);
+    }
+
+    .lform-input input:hover {
+        border: 1px solid black;
+    }
+
+    .lform-input {
+        margin-top: 2rem;
+        position: relative;
+    }
+
+    .lform-input label {
+        display: block;
+    }
+
+    i {
+        position: absolute;
+        right: 20px;
+        top: 65%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 10px 20px;
+        margin: 2px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        
+    }
+
+    .g-signin2 {
+        margin-top: 1rem;
+        margin-left: 5rem;
+    }
+
+    .lform-button {
+        background-color: #322082;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .lform-button:hover {
+        opacity: 0.8;
+    }
+
+    .signup-link {
+        margin-top: 1rem;
+        text-align: center;
+        font-weight: 500;
+        font-size: larger;
+    }
+
+    .signup-link a {
+        text-decoration: none;
+        color: rgb(1, 98, 111);
+    }
+        /* Media query for screens with a maximum width of 1024px (for laptops and tablets) */
+        @media (max-width: 1024px) {
+        .log-head {
+            width: 90%; /* Adjust the width for larger screens */
+        }
+
+        .lform-input {
+            margin-top: 1rem; /* Increase the margin for better spacing */
+        }
+        body {
+            background-size: cover; /* Adjust background size for larger screens */
+        }
+    }
+
+    /* Media query for screens with a maximum width of 760px (for mobile phones) */
+    @media (max-width: 760px) {
+        .log-head {
+            width: 100%; /* Adjust the width to fill the screen */
+            margin: 0;
+            border: none; /* Remove border */
+        }
+        body {
+            background-size: contain; /* Adjust background size for smaller screens */
+        }
+    }
+
     
-} 
-
-.lform-input{
-    margin-top: 2rem;
-    position: relative;
-   
-}
-
-.lform-input label{
-    display: block;
-}
-i{
-    position: absolute;
-    right: 20px;
-    top: 65%;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-
-/*.lform-input input{
-    width: 100%;
-    height: 2rem;
-    border: 1px solid black;
-    border-radius: 20%;
-    border-radius: 10px;
-    padding-left: 10px;}*/
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 10px 20px;
-  margin: 2px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
- 
-}  
-
-.g-signin2{
-    margin-top: 1rem;
-    margin-left: 5rem;
-}
-
-.lform-button{
-  background-color: #322082;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  font-size: 15px;
-}
-
-
-.lform-button:hover{
-  opacity: 0.8;
-
-}
-
-.signup-link{
-    margin-top: 1rem;
-    text-align: center;
-    font-weight: 500;
-    font-size: larger;
-}
-
-.signup-link a{
-    text-decoration: none;
-    color:  rgb(1, 98, 111);
-}
 </style>
