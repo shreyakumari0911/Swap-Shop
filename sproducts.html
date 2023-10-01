@@ -49,9 +49,11 @@
             <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
+
+
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img src="./Images/IMG-20230928-WA0012.jpg" alt="" width="100%" id="mainImg">
+            <img src="./Images/IMG-20230928-WA0026.jpg" alt="" width="100%" id="mainImg">
             <div class="small-img-group">
                 <div class="small-img-col">
                     <img src="./Images/IMG-20230928-WA0011.jpg" width="100%" class="small-img" alt="">
@@ -166,6 +168,24 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+    <script>
+        var mainImg = document.getElementById("mainImg");
+        var smallimg = document.getElementById("small-img");
+
+        smallimg[0].onclick = function () {
+            mainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function () {
+            mainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function () {
+            mainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function () {
+            mainImg.src = smallimg[3].src;
+        }
+
+    </script>
     <script src="script.js"></script>
 </body>
 
