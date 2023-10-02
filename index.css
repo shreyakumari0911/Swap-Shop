@@ -223,7 +223,6 @@ display: none;
   bottom: -4px;
   left: 20px;
 }
-<<<<<<< HEAD
 #page-header .about-header{
   background-image: url();
 }
@@ -231,13 +230,9 @@ display: none;
 text-align: center;
 margin-top:50px;
 padding: 25px;
-=======
-
-#about-header .section-p1{
-  display: flex;
-  
->>>>>>> 46658b914f5d1d2027cdd35476cf88076afa5875
 }
+#about-header .section-p1{
+  display: flex;}
 
 #hero{
   background-image: url("Images/bghome2.avif");
