@@ -457,11 +457,10 @@ button.normal{
   font-size: 14px;
   border-radius: 4px;
   background-color: #fff;
-  border: none;
+  border: 2px solid #088178;
   outline: none;
   transition: 0.2s;
   cursor: pointer
-    
 }
 
 #banner button:hover{
@@ -523,6 +522,7 @@ button.white{
   outline: none;
   transition: 0.2s;
   cursor: pointer
+
 }
 
 #sm-banner .banner-box:hover button{
@@ -551,13 +551,13 @@ button.white{
   background-position: center;
   background-size: cover;
   padding: 30px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
-
 #banner3 h2{
   color: #979e11;
   font-weight: 900;
   font-size: 25px;
+  padding: 70px;
 }
 #page-header{
   height:40vh;
