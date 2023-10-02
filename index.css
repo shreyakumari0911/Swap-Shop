@@ -194,8 +194,9 @@ display: none;
   bottom: -4px;
   left: 20px;
 }
-#page-header .about-header{
-  background-image: url();
+
+#about-header .section-p1{
+  display: flex;
   
 }
 #hero{
