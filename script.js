@@ -13,3 +13,20 @@ if (bar) {
    })
  }
 }
+
+// JavaScript for responsive search bar
+const searchBar = document.querySelector('#search-bar');
+const searchInput = document.querySelector('#search-bar input[type="text"]');
+
+searchBar.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+        searchInput.style.width = '200px'; // Adjust the width as needed
+        searchInput.focus();
+    }
+});
+
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768 && e.target !== searchInput && e.target !== searchBar) {
+        searchInput.style.width = '0';
+    }
+});
