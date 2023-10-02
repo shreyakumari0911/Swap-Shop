@@ -199,6 +199,7 @@ display: none;
   display: flex;
   
 }
+
 #hero{
   background-image: url("Images/bghome2.avif");
   height: 70vh;
@@ -1042,4 +1043,11 @@ display: flex;
 #page-header h2{
   text-align: center;
   padding-top: 100px;
+}
+#contact-header .section-p1 a{
+  text-decoration: none;
+  
+}
+#contact-header .section-p1 p{
+  text-decoration: none;
 }
