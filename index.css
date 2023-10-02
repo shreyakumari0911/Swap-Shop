@@ -68,6 +68,35 @@ body{
   background-color: #E3E6F3;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06)
 }
+/* Style for the search bar */
+/* Style for the search bar */
+#search-bar {
+  float: right; /* Float the search bar to the right */
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+#search-bar input[type="text"] {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  width: 200px;
+  transition: width 0.3s;
+}
+
+#search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for the search bar in mobile view */
+@media screen and (max-width: 768px) {
+  #search-bar input[type="text"] {
+      width: 0;
+      overflow: hidden;
+  }
+}
+
 
 #navbar{
   display: flex;
@@ -196,7 +225,11 @@ display: none;
 }
 #page-header .about-header{
   background-image: url();
-  
+}
+#page-header h3{
+text-align: center;
+margin-top:50px;
+padding: 25px;
 }
 #hero{
   background-image: url("Images/bghome2.avif");
