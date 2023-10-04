@@ -1,0 +1,72 @@
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+const server = http.createServer((req, res) => {
+    try {
+        console.log('Request has been made from browser to server!');
+        console.log(req.method);
+        console.log(req.url);
+
+        let filePath = './public'; // Adjust the base path to your file directory
+
+        switch (req.url) {
+            case '/':
+                filePath += '/index.html';
+                break;
+            case '/aboutus':
+                filePath += '/aboutus.html';
+                break;
+            case '/blog':
+                filePath += '/blog.html';
+                break;
+            case '/cart':
+                filePath += '/cart.html';
+                break;
+            case '/contact':
+                filePath += '/contact.html';
+                break;
+            default:
+                filePath += '/404.html';
+                break;
+        }
+
+        const contentType = getContentType(filePath);
+        res.setHeader('Content-Type', contentType);
+
+        fs.readFile(filePath, (err, fileData) => {
+            if (err) {
+                console.error(err);
+                res.statusCode = 404; // Set proper HTTP status code for not found
+                res.end('Not Found');
+            } else {
+                res.end(fileData);
+            }
+        });
+    } catch (err) {
+        console.error(err);
+        res.statusCode = 500; // Set proper HTTP status code for internal server error
+        res.end('Internal Server Error');
+    }
+});
+
+function getContentType(filePath) {
+    const extname = path.extname(filePath);
+    switch (extname) {
+        case '.html':
+            return 'text/html';
+        case '.css':
+            return 'text/css';
+        case '.js':
+            return 'text/javascript';
+        case '.png':
+            return 'image/png';
+        // Add more cases for other file types as needed
+        default:
+            return 'application/octet-stream'; // Default to binary data
+    }
+}
+
+server.listen(3000, 'localhost', () => {
+    console.log('Server is running on port 3000');
+});
