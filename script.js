@@ -13,7 +13,7 @@ if (bar) {
    })
  }
 }
-
+// logic
 // JavaScript for responsive search bar
 const searchBar = document.querySelector('#search-bar');
 const searchInput = document.querySelector('#search-bar input[type="text"]');

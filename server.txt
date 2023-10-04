@@ -1,3 +1,5 @@
+backup code.
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -70,3 +72,4 @@ function getContentType(filePath) {
 server.listen(3000, 'localhost', () => {
     console.log('Server is running on port 3000');
 });
+

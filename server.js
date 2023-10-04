@@ -14,6 +14,7 @@ const server = http.createServer((req,res)=>{
     // res.write("Welcome to SwapShop!");
 
     let path = './';
+    // adding the routes in website
 
     switch(req.url){
         case '/':
