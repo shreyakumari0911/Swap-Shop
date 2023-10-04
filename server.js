@@ -1,65 +1,56 @@
-const mysql = require('mysql');
-const cors = require("cors");
-const express = require("express")
-const app = express();
+const http  = require('http');//http module
+const fs = require('fs');
+const path = require('path');
+//creating a server 
+const server = http.createServer((req,res)=>{
+    console.log('request has been made from browser to server!');
+    console.log(req);
+    console.log(req.method);
+    console.log(req.url);
+    //creating responds from server when a request is made
+    res.setHeader('Content-Type','text/html');
+    // res.write("Hello From first server!");
+    // res.write("<h1>Hello From first server!</h1>");
+    // res.write("Welcome to SwapShop!");
 
+    let path = './';
 
+    switch(req.url){
+        case '/':
+            path+='/index.html'
+            break;
+        case '/aboutus':
+            path+='/aboutus.html'
+            break;
+        case '/blog':
+            path+='/blog.html'
+            break;
+        case '/cart':
+            path+='/cart.html'
+            break;
+        case '/contact':
+            path+='/contact.html'
+            break;
+        default:
+            path+='/404.html'
+            break;
 
-app.use(express.json());
-app.use(cors());
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    database: 'swapshop_login',
-    user: 'root',
-    password: 'root123'
+    }
+    fs.readFile(path,(err,fileData)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            // res.write(fileData);
+            res.end(fileData);
+        }
+    });
+
 });
 
-app.use('/login',(req,res)=>{
-    const Name = req.body.Name;
-    const Email = req.body.Email;
-    const Password = req.body.Password;
-
-
-    connection.query("INSERT INTO login(id,FullName,Email,Block,Room,Num) VALUES(?,?,?)",[Name,Email,Password],
-        (err,result)=>{
-            if(result){
-                res.send(result);
-            }
-            else{
-                res.send({message: "Enter Form Correctly"})
-            }
-        }
-    )
-})
-
-app.use('/signup',(req,res)=>{
-    const Name = req.body.Name;
-    const Password = req.body.Password;
-
-
-    connection.query("SELECT * FROM login WHERE Name = ? AND Password = ? ",[Name,Password],
-        (err,result)=>{
-            if(err){
-                req.setEncoding({err: err});
-            }
-            else{
-                if(result.length>0){
-                    res.send(result);
-                }
-                else{
-                    res.send(message, "Wrong credentials");
-                }
-            }
-        }
-    )
-})
-connection.connect(function(err){
-    if(err){
-        console.log("Error occurred while connecting ");
-    }
-    else{
-        console.log("Connetion created with mysql!");
-    }
+//port numnber and host
+server.listen(3000,'localhost',()=>{
+    console.log("server is running on port 3000");
 });
+
 
