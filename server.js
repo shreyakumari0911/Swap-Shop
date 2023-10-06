@@ -2,6 +2,7 @@ const http  = require('http');//http module
 const fs = require('fs');
 const path = require('path');
 //creating a server 
+
 const server = http.createServer((req,res)=>{
     console.log('request has been made from browser to server!');
     console.log(req);
@@ -13,7 +14,7 @@ const server = http.createServer((req,res)=>{
     // res.write("<h1>Hello From first server!</h1>");
     // res.write("Welcome to SwapShop!");
 
-    let path = './';
+    let path = '/';
     // adding the routes in website
 
     switch(req.url){
@@ -35,7 +36,6 @@ const server = http.createServer((req,res)=>{
         default:
             path+='/404.html'
             break;
-
     }
     fs.readFile(path,(err,fileData)=>{
         if(err){
