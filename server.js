@@ -1,57 +1,53 @@
-const http  = require('http');//http module
-const fs = require('fs');
-const path = require('path');
-//creating a server 
+const express = require("express");
+const mysql = require("mysql");
+const app = express();
+const cors = require("cors");
 
-const server = http.createServer((req,res)=>{
-    console.log('request has been made from browser to server!');
-    console.log(req);
-    console.log(req.method);
-    console.log(req.url);
-    //creating responds from server when a request is made
-    res.setHeader('Content-Type','text/html');
-    // res.write("Hello From first server!");
-    // res.write("<h1>Hello From first server!</h1>");
-    // res.write("Welcome to SwapShop!");
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root123",
+    database: "signup"
+});
 
-    let path = '/';
-    // adding the routes in website
+// Middleware setup
+app.use(cors());
+app.use(express.json());
 
-    switch(req.url){
-        case '/':
-            path+='/index.html'
-            break;
-        case '/aboutus':
-            path+='/aboutus.html'
-            break;
-        case '/blog':
-            path+='/blog.html'
-            break;
-        case '/cart':
-            path+='/cart.html'
-            break;
-        case '/contact':
-            path+='/contact.html'
-            break;
-        default:
-            path+='/404.html'
-            break;
-    }
-    fs.readFile(path,(err,fileData)=>{
-        if(err){
-            console.log(err);
-        }
-        else{
-            // res.write(fileData);
-            res.end(fileData);
+app.get("/", (req, res) => {
+    res.json({ message: "Hello from backend!" });
+});
+
+// Handle errors gracefully
+function handleDatabaseError(res, err) {
+    console.error(err);
+    res.status(500).json({ message: "An error occurred on the server." });
+}
+
+app.get("/users", (req, res) => {
+    const q = "SELECT * FROM users";
+    db.query(q, (err, data) => {
+        if (err) {
+            handleDatabaseError(res, err);
+        } else {
+            res.json({ data });
         }
     });
-
 });
 
-//port numnber and host
-server.listen(3000,'localhost',()=>{
-    console.log("server is running on port 3000");
+app.post("/users", (req, res) => {
+    const q = "INSERT INTO users (Name, Age, Year) VALUES (?, ?, ?)";
+    const values = [req.body.Name, req.body.Age, req.body.Year];
+
+    db.query(q, values, (err, result) => {
+        if (err) {
+            handleDatabaseError(res, err);
+        } else {
+            res.json({ message: "User has been created!", data: result });
+        }
+    });
 });
 
-
+app.listen(8800, () => {
+    console.log("Connected to backend!");
+});
