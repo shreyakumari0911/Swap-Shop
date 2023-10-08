@@ -1,26 +1,27 @@
-// Requiring in-built https for creating 
-// https server 
-const https = require("https"); 
-  
 // Express for handling GET and POST request 
 const express = require("express"); 
 const app = express(); 
-
-// Requiring file system to use local files 
 const fs = require("fs"); 
 const path = require('path');
+const mysql = require("mysql");
+const cors = require("cors");
 
 const port = 8000;
 
-// Configuring express to use body-parser 
-// as middle-ware 
-const mime = require('mime');
-// Serve static files (e.g., HTML, CSS, JavaScript) from a directory
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root123",
+    database: "signup"
+});
+
+// Middleware setup
+app.use(cors());
+app.use(express.json());
 app.use(express.static('public'));
 app.use(express.static(__dirname));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 
 app.get("/", (req, res)=>{
     console.log(__dirname+"/public/index.html");
@@ -68,30 +69,6 @@ app.get("/404", (req, res)=>{
     res.sendFile(__dirname + "/public/404.html");
 })
 
-app.listen(port, () => {
-    console.log(`app listening on port ${port}`)
-});
-=======
-const express = require("express");
-const mysql = require("mysql");
-const app = express();
-const cors = require("cors");
-
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root123",
-    database: "signup"
-});
-
-// Middleware setup
-app.use(cors());
-app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.json({ message: "Hello from backend!" });
-});
-
 // Handle errors gracefully
 function handleDatabaseError(res, err) {
     console.error(err);
@@ -122,7 +99,6 @@ app.post("/users", (req, res) => {
     });
 });
 
-app.listen(8800, () => {
-    console.log("Connected to backend!");
+app.listen(port, () => {
+    console.log(`app listening on port ${port}`)
 });
-
