@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login_page</title>
+    <meta name="google-signin-client_id" content="370027097254-rrhtnd4uqjb952ndk1uj688nsng5j6lf.apps.googleusercontent.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+    <div class="log-head bgo" >
+        <div class="form-info">
+            <p class="phead">Login</p>
+            <form class="lform">
+                <div class="lform-input">
+                    <label for="username">Name</label>
+                    <input type="text" id="username" name="name" placeholder="Enter Name">
+                    <i class="fa-regular fa-keyboard"></i>
+                   
+                </div>
+                <div class="lform-input">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                    <i class="fa-regular fa-user"></i>
+                    
+                </div>
+                <div class="lform-input">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+               <button class="lform-button" type="submit">Login </button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me </label>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div></label>
+            </form>
+            <p class="signup-link">Don't have an account?<a href="/signup.html"> Sign up</a></p>
+        </div>
+    </div></form>
+</body>
+</html>
+
+
+<!-- <img src="" alt=""> -->
+    <!-- test line to create a new folder on github -->
+
+
+
+
+
+<!-- css -->
+<style>
+    *{
+    padding: 0%;
+    margin: 0%;
+    }
+body{
+   
+    display: flex;
+    justify-content: center;
+    background-image:url("Images/lightblue.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-info{
+    width: 80%;
+}
+
+.phead{
+    font-size: 30px;
+    font-weight:1000;
+    color: #322082;
+    text-align: center;
+    margin-top: 2rem;
+    font-style:normal;
+}
+
+.log-head{
+    width: 350px;
+    height: 500px;
+    background-color:rgba(183, 228, 240, 0.2);
+    display: flex;
+    justify-content: center;
+    border: 7px solid rgb(145, 185, 240);
+    border-radius: 5px;
+    padding: 16px;
+    margin-top:22%;
+    margin-left: 8%;
+    border: 5px solid rgb(175, 205, 246);
+}
+
+.lform-input input:hover{
+    border: 1px solid black;
+    
+} 
+
+.lform-input{
+    margin-top: 2rem;
+    position: relative;
+   
+}
+
+.lform-input label{
+    display: block;
+}
+i{
+    position: absolute;
+    right: 20px;
+    top: 65%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+/*.lform-input input{
+    width: 100%;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 20%;
+    border-radius: 10px;
+    padding-left: 10px;}*/
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+ 
+}  
+
+.g-signin2{
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+.lform-button{
+  background-color: #322082;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+}
+
+
+.lform-button:hover{
+  opacity: 0.8;
+
+}
+
+.signup-link{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: larger;
+}
+
+.signup-link a{
+    text-decoration: none;
+    color:  rgb(1, 98, 111);
+}
+</style>
