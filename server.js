@@ -6,7 +6,8 @@ const path = require('path');
 const mysql = require("mysql");
 const cors = require("cors");
 
-const port = 8000;
+
+const port = process.env.PORT || 8000;
 
 const db = mysql.createConnection({
     host: "localhost",
