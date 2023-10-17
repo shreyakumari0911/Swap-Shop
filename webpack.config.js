@@ -9,6 +9,7 @@ module.exports = {
   },
   resolve: {
     fallback: {
+      async_hooks: false,
       zlib: require.resolve('zlib-browserify'),
       querystring: require.resolve('querystring-es3'),
       crypto: require.resolve('crypto-browserify'),
